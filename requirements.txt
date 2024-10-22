@@ -1,0 +1,34 @@
+beautifulsoup4>=4.12.3
+certifi>=2024.8.30
+charset-normalizer>=3.4.0
+idna>=3.10
+numpy>=2.1.2
+pandas>=2.2.3
+python-dateutil>=2.9.0.post0
+pytz>=2024.2
+requests>=2.32.3
+six>=1.16.0
+soupsieve>=2.6
+tzdata>=2024.2
+urllib3>=2.2.3
+
+
+:status: 200
+Content-Type: application/json
+Cache-Control: s-maxage=21600, stale-while-revalidate
+ETag: "nmdytczweqlvg"
+X-Frame-Options: DENY
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Date: Tue, 22 Oct 2024 17:01:53 GMT
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1
+Server: ZENEDGE
+x-nextjs-cache: HIT
+x-zen-fury: b55058f40b8c6102c7be190c85c588d9a712f7f2
+x-cache-status: NOTCACHED
+x-download-options: noopen
+strict-transport-security: max-age=31536000; includeSubDomains
+x-nextjs-matched-path: /futebol-brasileiro/times/[...slug]
+x-cdn: Served-By-Zenedge
+

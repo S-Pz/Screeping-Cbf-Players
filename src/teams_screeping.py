@@ -1,6 +1,6 @@
 import pandas as pd
 import requests
-from lxml import etree
+import json
 from bs4 import BeautifulSoup
 
 home_page_= "https://www.cbf.com.br/futebol-brasileiro/times/campeonato-brasileiro/serie-a/2024"
@@ -11,22 +11,33 @@ headers = {
 
 response = requests.get(home_page_, headers=headers)
 
-##jogadores = []
-print(response.status_code)
-soup = BeautifulSoup(response.content, 'html.parser')
-find_href = soup.find(class_='styles__ClubsGrid-sc-15tpbpf-2 eQyJzu')
 
-href = find_href.find_all('a')
-hreff = []
 
-for ulrl in href:
-  e = ulrl['href']
-  hreff.append(e)
+try:
+  json_data = response.json()
+  print(json_data)
+  soup = BeautifulSoup(response.content, 'html.parser')
+  find_href = soup.find(class_='styles__ClubsGrid-sc-15tpbpf-2 eQyJzu')
 
-print(hreff)
-# for url in times_urls:
+  href = find_href.find_all('a')
+  
+  #print(href)
+  url_list:list = []
 
-#   response = requests.get(url, headers=headers)
+  for url in href:
+    print(url)
+    # url_list.append(url['href'])
+    # print(url.find('h2').get_text())
+    #url_dict["name"]=url
+
+except:
+  raise Exception(f"Error {response.status_code}") 
+
+# for url in url_list:
+
+#   completed_url = "https://www.cbf.com.br" + url
+
+#   response = requests.get(completed_url, headers=headers)
 
 #   if response.status_code == 200:
 #       soup = BeautifulSoup(response.text, 'html.parser')
